@@ -132,17 +132,4 @@ Record the OS, CPU architecture, Python version, camera/setup conditions, expect
 - [Draft Component source](diagrams/component_diagram.puml)
 - [GitHub Issues - task tracking](https://github.com/almatmz/Posterys/issues)
 
-YouTrack is omitted based on the clarification reported by the team; retain confirmation for the committee. GitHub Issues is the proposed tracker for assigned, prioritised tasks with acceptance criteria and deadlines. Actual task records and repository access require confirmation.
-
-Use feature branches and pull requests, commit completed work progressively, and obtain another team member's review before merging into main. Create the pre-defense-1 tag only after the submission is ready and its exact commit is identified. Record supervisor review notes and follow-up decisions as they are received.
-
-## Submission evidence still to confirm
-
-- Resolve the repeated P03 interview identifier and verify participant uniqueness.
-- Add the final five PNG exports to docs/ux/mockups/ and verify the design checklist.
-- Record real manual camera checks and demonstration screenshots.
-- Confirm repository publication, access, individual contributions and peer reviews.
-- Record supervisor feedback and decisions.
-- Create the pre-defense-1 tag on the reviewed submission commit.
-
 This README package contains documentation only. It does not include source code, dependencies, diagrams or PNG exports; copy these README files into the existing project.

@@ -1,7 +1,6 @@
 # Posterys documentation
 
 Updated: 19 October 2026.
-Status: supervisor-review draft.
 
 ## Main project report
 
@@ -61,18 +60,3 @@ Requirement mapping and scenario descriptions are provided in [ux/README.md](ux/
 GOOD POSTURE means that supported measurements are within the thresholds of a user-selected reference. It does not establish that the reference position is medically healthy.
 
 The prototype does not directly measure muscle tension or establish clinical effectiveness.
-
-## Submission checklist
-
-Before submission:
-
-- Confirm that the supervisor and committee can access the report and repository.
-- Insert all five mockup images into their marked report locations.
-- Check the final mockup exports against the design-review checklist in ux/README.md.
-- Resolve the repeated P03 interview identifier and confirm participant uniqueness.
-- Record actual manual prototype checks and demonstration screenshots.
-- Record individual contributions and peer reviews.
-- Obtain supervisor feedback and document the resulting decisions.
-- Create the pre-defense-1 Git tag on the exact reviewed submission commit.
-
-A complete integrated application is not required at this stage. Prepared documents and mockups do not replace actual implementation, verification or review evidence.
