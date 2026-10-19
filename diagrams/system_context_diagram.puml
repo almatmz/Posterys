@@ -1,0 +1,33 @@
+@startuml system context diagram
+title Posterys - Target System Context
+
+!theme plain
+left to right direction
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam ArrowColor #475569
+skinparam rectangleBackgroundColor #F1F5F9
+skinparam rectangleBorderColor #475569
+
+actor "User\nStudent / office worker" as User
+
+rectangle "Posterys\nIntegrated posture analysis system\nWeb and desktop applications" as Posterys
+
+rectangle "Webcamera\nExternal capture device" as Camera
+
+rectangle "Operating system\nCamera access, tray and notifications" as OS
+
+User -right-> Posterys : Starts sessions, uploads media,\nviews feedback, history and reports
+
+Camera -down-> Posterys : Camera frames\nwith user permission
+
+Posterys -right-> OS : Requests camera access;\nuses tray and notifications on desktop
+
+note bottom of Posterys
+  Planned system boundary.
+  The current prototype implements
+  local webcam analysis and visual feedback.
+end note
+
+@enduml

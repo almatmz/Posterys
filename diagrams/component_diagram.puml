@@ -1,0 +1,67 @@
+@startuml сomponent diagram
+title Posterys - Draft Component Diagram (Hybrid Proposal)
+
+!theme plain
+top to bottom direction
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+
+skinparam ArrowColor #475569
+skinparam componentBackgroundColor #F1F5F9
+skinparam componentBorderColor #475569
+
+skinparam nodesep 30
+skinparam ranksep 40
+
+package "Client device" {
+
+  component "Shared User Interface\nReact - Web / Desktop" as UI
+
+  component "Camera and Media Access\nPermissions, frames, selected files" as Capture
+
+  component "Local Posture Engine\nMediaPipe, quality checks,\nreference and posture rules" as LocalCV
+
+  component "Desktop Agent\nElectron, tray and reminders" as Agent
+}
+
+package "Backend - Python / FastAPI" {
+
+  component "HTTP API\nRequests and responses" as API
+
+  component "Full-body CV Pipeline\nPose landmarks, quality checks,\nangles and symmetry" as FullCV
+
+  component "Application Services\nAccounts, history, statistics,\nrecommendations and PDF reports" as Services
+}
+
+database "PostgreSQL\nAccounts, settings,\nconsented measurements" as DB
+
+rectangle "Operating system\nCamera permissions and\ndesktop notifications" as OS
+
+UI ..> Capture : Camera / file controls
+UI ..> LocalCV : Live seated posture checks
+UI ..> Agent : Desktop mode controls
+
+Agent ..> LocalCV : Background posture checks
+LocalCV ..> Capture : Read permitted camera frames
+
+Capture ..> OS : Request camera access
+Agent ..> OS : Tray / native notifications
+
+UI ..> API : Full-body requests;\noptional metric sync;\nhistory / reports
+
+API ..> FullCV : Analyse full-body frames / media
+API ..> Services : Accounts, saved results, reports
+
+Services ..> DB : Read / write
+
+legend bottom left
+  Arrows show calls / dependencies; return values are omitted.
+  Seated monitoring: camera frames stay on the client device.
+  Full-body server analysis: explicit user request.
+  Saving and synchronising measurements requires consent.
+endlegend
+
+@enduml

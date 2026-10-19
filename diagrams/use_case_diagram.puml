@@ -1,0 +1,75 @@
+@startuml use case diagram
+title Posterys - Planned System Use Cases
+
+!theme plain
+left to right direction
+
+skinparam shadowing false
+skinparam defaultFontName Arial
+skinparam packageStyle rectangle
+skinparam ArrowColor #475569
+skinparam usecaseBackgroundColor #F1F5F9
+skinparam usecaseBorderColor #475569
+
+actor "User" as User
+
+rectangle "Posterys" {
+
+  package "Live monitoring - Web / Desktop" {
+    usecase "Monitor seated posture\nvia webcam" as UC_Seated
+
+    usecase "Calibrate camera\nand reference position" as UC_Calibrate
+
+    usecase "View real-time\nposture feedback" as UC_Feedback
+
+    usecase "Pause or stop\ncamera monitoring" as UC_Stop
+  }
+
+  package "Full-body assessment - Web / Desktop" {
+    usecase "Assess full-body posture\nvia live camera" as UC_FullLive
+
+    usecase "Analyse a full-body\nphoto or video" as UC_Upload
+
+    usecase "View measurements,\nquality warnings and explanations" as UC_Results
+  }
+
+  package "Background monitoring - Desktop only" {
+    usecase "Run background\nposture monitoring" as UC_Background
+
+    usecase "Receive a desktop\nposture reminder" as UC_Reminder
+  }
+
+  package "History and settings - Web / Desktop" {
+    usecase "View history and\ndaily / weekly statistics" as UC_History
+
+    usecase "View preventive\nrecommendations" as UC_Recommendations
+
+    usecase "Export an\nassessment PDF report" as UC_Export
+
+    usecase "Configure camera, privacy\nand reminder settings" as UC_Settings
+  }
+}
+
+User -- UC_Seated
+User -- UC_Calibrate
+User -- UC_Stop
+
+User -- UC_FullLive
+User -- UC_Upload
+
+User -- UC_Background
+
+User -- UC_History
+User -- UC_Recommendations
+User -- UC_Export
+User -- UC_Settings
+
+UC_Seated ..> UC_Feedback : <<include>>
+
+UC_FullLive ..> UC_Results : <<include>>
+UC_Upload ..> UC_Results : <<include>>
+
+UC_Reminder .left.> UC_Background : <<extend>>\n[valid tracking AND\nsustained deviation AND\nreminders enabled]
+
+
+@enduml
