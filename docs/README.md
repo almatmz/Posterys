@@ -1,25 +1,78 @@
-# Documentation and 24 October submission status
+# Posterys documentation
 
-This index distinguishes prepared materials from work still required. Paths marked pending describe intended destinations, not completed documents.
+Updated: 19 October 2026.
+Status: supervisor-review draft.
 
-| Required material                                                                              | Location or intended destination                                      | Current status                                                                                            |
-| ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| Project title, problem, users, aim, objectives, outcomes and scope                             | README summary; planned proposal.md                                   | README summary prepared; full proposal/objectives pending.                                                |
-| Relevance evidence: 3-5 user discussions or substantive client agreement                       | Planned user-research.md                                              | Interview records supplied; anonymised synthesis, participant-ID check and links to requirements pending. |
-| Critical literature review and analysis matrix: >=12 used sources, >=8 scientific publications | Planned literature/ directory                                         | Draft review and matrix supplied separately; final verification and repository integration pending.       |
-| Existing-system comparison: 3-5 systems, 6-10 common criteria                                  | Planned system-comparison.md                                          | Pending.                                                                                                  |
-| Technology comparison: >=3 decisions, 2-3 alternatives per decision                            | Planned technology-comparison.md                                      | Pending.                                                                                                  |
-| FR/NFR, priorities and acceptance criteria                                                     | Planned requirements.md                                               | Pending.                                                                                                  |
-| System Context, Use Case and draft Component diagrams, editable sources and exports            | [Diagrams](../diagrams/)                                              | Prepared; target architecture remains a draft.                                                            |
-| UX/prototype materials for key scenarios                                                       | [Prototype](../src/prototype.py)                                      | Local seated prototype prepared; remaining workflow mockups pending.                                      |
-| Verification/evaluation plan: metrics, conditions and baseline                                 | [Core tests](../tests/test_prototype.py); planned evaluation-plan.md  | Core automated tests prepared; manual and formal evaluation records pending.                              |
-| Responsibilities, milestones, risks, dependencies and traceable work                           | README responsibility plan; planned project-plan.md and GitHub Issues | Initial responsibilities described; assigned issues, risk/milestone plan and review history pending.      |
-| Supervisor feedback and decisions addressing comments                                          | Planned supervisor-feedback.md                                        | Pending review from the supervisor.                                                                       |
+## Main project report
 
-The instructor waived YouTrack; GitHub Issues is the proposed task tracker.
+[Open the consolidated project report in Google Docs](https://docs.google.com/document/d/1ozC7s9Gv_CD32tUh_pMsK2LaQbnglrGmf8uyfv52y80/edit)
 
-The repository still needs actual publication, team/supervisor/committee access, progressive individual contributions, peer review, and the pre-defense-1 submission tag.
+The consolidated report contains:
 
-An index or checklist does not replace the required deliverables.
+- Project proposal, objectives and scope.
+- User research and relevance evidence.
+- Literature review and publication analysis.
+- Existing-system and technology comparisons.
+- Functional and non-functional requirements.
+- Architecture and diagrams.
+- Prototype description and UX mockups.
+- Verification and evaluation plan.
+- Responsibilities, milestones and risks.
+- Supervisor feedback section, awaiting review.
 
-A complete application is not required for this stage. The required analysis, design, planning and review evidence must nevertheless be present by submission.
+These materials are maintained in the consolidated report rather than duplicated in separate Markdown files. The supervisor and committee must have access to the linked document.
+
+## Repository documentation
+
+| Material                    | Location                                                | Status                                                                           |
+| --------------------------- | ------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Architecture                | [Architecture draft](architecture-draft.md)             | Proposed system structure; integrated implementation is planned.                 |
+| Requirements                | [Requirements and acceptance criteria](requirements.md) | Initial specification for team and supervisor review.                            |
+| Functional prototype        | [Prototype description](prototype-notes.md)             | Describes the current local Python webcam application and its limitations.       |
+| Verification and evaluation | [Evaluation plan](evaluation-plan.md)                   | Defines planned checks, metrics, measurement conditions and comparison baseline. |
+| UX design                   | [Mockups and scenario mapping](ux/README.md)            | Five static interface designs; usability evaluation remains pending.             |
+
+## UX mockups
+
+The image files are stored in `docs/ux/mockups/`.
+
+| File                                                                          | Scenario                          | Report location         |
+| ----------------------------------------------------------------------------- | --------------------------------- | ----------------------- |
+| [01-web-monitoring.png](ux/mockups/01-web-monitoring.png)                     | Seated monitoring                 | Section 8.2.1, Figure 4 |
+| [02-web-media-analysis.png](ux/mockups/02-web-media-analysis.png)             | Full-body assessment              | Section 8.2.2, Figure 5 |
+| [03-web-results.png](ux/mockups/03-web-results.png)                           | Assessment results                | Section 8.2.3, Figure 6 |
+| [04-desktop-background.png](ux/mockups/04-desktop-background.png)             | Desktop background monitoring     | Section 8.2.4, Figure 7 |
+| [05-desktop-history-reminder.png](ux/mockups/05-desktop-history-reminder.png) | Reminders, history and statistics | Section 8.2.5, Figure 8 |
+
+The mockups illustrate planned interactions. Displayed measurements, times and statistics are examples, not experimental results.
+
+Requirement mapping and scenario descriptions are provided in [ux/README.md](ux/README.md).
+
+## Development and verification status
+
+| Category               | Current status                                                                                                                |
+| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Implemented            | Local Python webcam prototype with reference capture, head/shoulder feedback, tracking-quality states and exit controls.      |
+| Reported verification  | Successful Windows operation and nine passing synthetic core tests reported by the team.                                      |
+| Designed               | Five static web/desktop mockups and a draft target architecture.                                                              |
+| Planned implementation | Integrated web/desktop clients, API, database, full-body assessment, background reminders, persistent history and PDF export. |
+| Pending evaluation     | Recorded manual camera checks, usability walkthroughs, native macOS validation and accuracy/performance measurements.         |
+
+GOOD POSTURE means that supported measurements are within the thresholds of a user-selected reference. It does not establish that the reference position is medically healthy.
+
+The prototype does not directly measure muscle tension or establish clinical effectiveness.
+
+## Submission checklist
+
+Before submission:
+
+- Confirm that the supervisor and committee can access the report and repository.
+- Insert all five mockup images into their marked report locations.
+- Check the final mockup exports against the design-review checklist in ux/README.md.
+- Resolve the repeated P03 interview identifier and confirm participant uniqueness.
+- Record actual manual prototype checks and demonstration screenshots.
+- Record individual contributions and peer reviews.
+- Obtain supervisor feedback and document the resulting decisions.
+- Create the pre-defense-1 Git tag on the exact reviewed submission commit.
+
+A complete integrated application is not required at this stage. Prepared documents and mockups do not replace actual implementation, verification or review evidence.
