@@ -132,4 +132,19 @@ Record the OS, CPU architecture, Python version, camera/setup conditions, expect
 - [Draft Component source](diagrams/component_diagram.puml)
 - [GitHub Issues - task tracking](https://github.com/almatmz/Posterys/issues)
 
-This README package contains documentation only. It does not include source code, dependencies, diagrams or PNG exports; copy these README files into the existing project.
+## Source code and configuration
+
+The implemented Python webcam prototype is organised by component:
+
+- `src/prototype.py`: compatible launch entry point and command-line options.
+- `src/posterys/app.py`: camera capture, MediaPipe inference and OpenCV display.
+- `src/posterys/measurements.py`: landmark validation and image measurements.
+- `src/posterys/detector.py`: reference capture, smoothing and status rules.
+- `src/posterys/ui.py`: window layout and feedback colours.
+- `src/posterys/configuration.py`: JSON configuration loading and validation.
+- `requirements.txt`: pinned runtime dependencies.
+- `config/prototype.example.json`: runnable configuration example.
+
+The existing launch and test commands remain valid. See
+[configuration instructions](config/README.md) for optional settings. The planned
+web, backend and desktop integration components are not implemented by this change.
